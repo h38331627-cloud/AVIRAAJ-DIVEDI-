@@ -1,192 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>RAHUL TOSS FIXER</title>
-
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){
-n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '1265282839024084');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent');
-</script>
-
+<title>AVIRAAJ DIVEDI</title>
 <script src="https://cdn.tailwindcss.com"></script>
-
 <style>
-body{
-margin:0;
-font-family:sans-serif;
-background:linear-gradient(to bottom,#020617,#0f172a);
-color:white;
+body {
+  background: #111;
 }
 
-/* FULL SCREEN */
-.main{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-padding:20px;
+/* iPhone Frame */
+.phone {
+  width: 320px;
+  height: 640px;
+  border: 12px solid #222;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  margin: 40px auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
-/* TITLE */
-.title{
-font-size:28px;
-font-weight:900;
-color:#facc15;
-text-align:center;
+/* Notch */
+.notch {
+  width: 160px;
+  height: 25px;
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 5;
 }
 
-/* CARD */
-.card{
-background:#111827;
-padding:20px;
-border-radius:16px;
-text-align:center;
-margin-top:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
+/* Layers */
+.layer {
+  position: absolute;
+  inset: 0;
 }
 
-/* BUTTON */
-.btn{
-display:block;
-width:100%;
-padding:16px;
-border-radius:12px;
-font-weight:bold;
-text-align:center;
-margin-top:15px;
-transition:0.2s;
+/* Layer 1 - Background */
+.bg-layer {
+  background-image: url('https://raw.githubusercontent.com/h38331627-cloud/AVIRAAJ-DIVEDI-/main/imgeavirajdivedi.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px) brightness(0.6);
 }
 
-.btn1{ background:#22c55e; }
-.btn2{ background:#2563eb; }
-
-.btn:hover{
-transform:scale(1.05);
+/* Layer 2 - Overlay */
+.overlay-layer {
+  background: rgba(0,0,0,0.5);
 }
 
-/* BADGE */
-.badge{
-background:#ef4444;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-display:inline-block;
-margin-top:8px;
+/* Layer 3 - Content */
+.content-layer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-/* DISCLAIMER */
-.disclaimer{
-font-size:11px;
-color:#9ca3af;
-text-align:center;
-margin-top:15px;
-line-height:1.4;
+/* Layer 4 - UI Effects */
+.ui-layer {
+  pointer-events: none;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.9);
+}
+
+.profile {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  margin-top: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  border-radius: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.countdown {
+  font-size: 24px;
+  color: yellow;
+  margin-top: 10px;
 }
 </style>
-
 </head>
-
 <body>
 
-<div class="main">
+<div class="phone">
+  <div class="notch"></div>
 
-<!-- TOP -->
-<div>
-<h1 class="title">RAHUL TOSS FIXER</h1>
+  <!-- Layer 1 -->
+  <div class="layer bg-layer"></div>
 
-<div class="text-center mt-2">
-<span class="badge">🔥 LIMITED ACCESS</span>
-</div>
+  <!-- Layer 2 -->
+  <div class="layer overlay-layer"></div>
 
-<div class="text-center mt-3 text-lg">
-⏳ Join Fast: <span id="countdown" class="text-yellow-300 font-bold">30</span>s
-</div>
+  <!-- Layer 3 -->
+  <div class="layer content-layer">
+    <h1 class="text-xl font-bold text-yellow-400">AVIRAAJ DIVEDI</h1>
 
-<div class="card">
-<p class="text-lg font-semibold">📢 Daily Toss Updates</p>
-<p class="text-sm mt-2">High Accuracy • Instant Access 👇</p>
-</div>
-</div>
+    <img src="https://raw.githubusercontent.com/h38331627-cloud/AVIRAAJ-DIVEDI-/main/image1avi.jpg" class="profile">
 
-<!-- BUTTONS -->
-<div>
+    <p class="mt-2 text-sm">Cricket Prediction King 👑</p>
 
-<a href="https://t.me/+BZMHSu-IhjFlZjll" id="btn1">
-<div class="btn btn1">JOIN NOW 🚀</div>
-</a>
+    <div class="countdown" id="count">30</div>
 
-<a href="https://t.me/+BZMHSu-IhjFlZjll" id="btn2">
-<div class="btn btn2">GET ACCESS ⚡</div>
-</a>
+    <a href="https://t.me/+cLrxxtYfFhFhZGJl">
+      <button class="btn">JOIN TELEGRAM</button>
+    </a>
+  </div>
 
-<p class="disclaimer">
-⚠️ This page is for informational purposes only.  
-We do not guarantee any results, profits, or accuracy.  
-Users should act at their own discretion.  
-This page follows advertising guidelines and avoids misleading claims.
-</p>
-
-</div>
-
+  <!-- Layer 4 -->
+  <div class="layer ui-layer"></div>
 </div>
 
 <script>
-
-let timeLeft = 30;
-let leadTracked = false;
-
-const countdown = document.getElementById("countdown");
-
-const timer = setInterval(() => {
-timeLeft--;
-countdown.innerText = timeLeft;
-
-if(timeLeft === 5 && !leadTracked){
-   fbq('track', 'Lead', {
-     content_name: 'Telegram Join',
-     value: 1,
-     currency: 'INR'
-   });
-   leadTracked = true;
-}
-
-if(timeLeft < 0){
-clearInterval(timer);
-window.location.href = "https://t.me/+BZMHSu-IhjFlZjll";
-}
+let t = 30;
+setInterval(()=>{
+  document.getElementById('count').innerText = t;
+  t--;
+  if(t<0) t=30;
 },1000);
-
-/* TRACKING */
-function trackLead(){
-if(!leadTracked){
-fbq('track', 'Lead', {
-  content_name: 'Telegram Join',
-  value: 1,
-  currency: 'INR'
-});
-leadTracked = true;
-}
-}
-
-document.getElementById("btn1").onclick = trackLead;
-document.getElementById("btn2").onclick = trackLead;
-
 </script>
 
 </body>
