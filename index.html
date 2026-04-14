@@ -3,91 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AVIRAAJ DIVEDI</title>
+<title>AVIRAAJ DIVEDI PREMIUM</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-body {
-  background: #111;
-}
+body { background: radial-gradient(circle, #000, #050505); }
 
-/* iPhone Frame */
 .phone {
-  width: 320px;
-  height: 640px;
-  border: 12px solid #222;
-  border-radius: 40px;
+  width: 340px;
+  height: 680px;
+  border: 14px solid #111;
+  border-radius: 45px;
   position: relative;
   overflow: hidden;
   margin: 40px auto;
-  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+  box-shadow: 0 0 60px rgba(0,0,0,1);
 }
 
-/* Notch */
 .notch {
-  width: 160px;
-  height: 25px;
+  width: 180px;
+  height: 28px;
   background: #000;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  z-index: 5;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 10;
 }
 
-/* Layers */
-.layer {
-  position: absolute;
-  inset: 0;
-}
+.layer { position: absolute; inset: 0; }
 
-/* Layer 1 - Background */
 .bg-layer {
   background-image: url('https://raw.githubusercontent.com/h38331627-cloud/AVIRAAJ-DIVEDI-/main/imgeavirajdivedi.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(2px) brightness(0.6);
+  filter: blur(3px) brightness(0.5);
+  animation: zoom 20s infinite alternate;
 }
 
-/* Layer 2 - Overlay */
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
 .overlay-layer {
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.95));
 }
 
-/* Layer 3 - Content */
 .content-layer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   color: white;
   text-align: center;
   padding: 20px;
 }
 
-/* Layer 4 - UI Effects */
-.ui-layer {
-  pointer-events: none;
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.9);
+.top-bar {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.8;
 }
 
 .profile {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: 3px solid gold;
-  margin-top: 20px;
+  box-shadow: 0 0 20px gold;
 }
 
-.btn {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: cyan;
-  color: black;
+.name {
+  font-size: 22px;
   font-weight: bold;
-  border-radius: 10px;
-  animation: pulse 1.5s infinite;
+  color: #ffd700;
+}
+
+.badge {
+  background: red;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
@@ -96,10 +97,67 @@ body {
   100% { transform: scale(1); }
 }
 
-.countdown {
-  font-size: 24px;
-  color: yellow;
+.stats {
+  display: flex;
+  gap: 15px;
   margin-top: 10px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.1);
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.countdown {
+  font-size: 26px;
+  color: yellow;
+  font-weight: bold;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 14px 25px;
+  background: linear-gradient(45deg, cyan, blue);
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px cyan; }
+  50% { box-shadow: 0 0 25px cyan; }
+  100% { box-shadow: 0 0 10px cyan; }
+}
+
+.chat {
+  position: absolute;
+  bottom: 80px;
+  left: 10px;
+  right: 10px;
+}
+
+.chat-msg {
+  background: rgba(255,255,255,0.1);
+  margin-top: 5px;
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 11px;
+  text-align: left;
+  animation: fadeIn 2s infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.ui-layer {
+  pointer-events: none;
+  box-shadow: inset 0 0 60px rgba(0,0,0,1);
 }
 </style>
 </head>
@@ -108,28 +166,42 @@ body {
 <div class="phone">
   <div class="notch"></div>
 
-  <!-- Layer 1 -->
   <div class="layer bg-layer"></div>
-
-  <!-- Layer 2 -->
   <div class="layer overlay-layer"></div>
 
-  <!-- Layer 3 -->
   <div class="layer content-layer">
-    <h1 class="text-xl font-bold text-yellow-400">AVIRAAJ DIVEDI</h1>
+    <div class="top-bar">
+      <span>9:41</span>
+      <span>📶 🔋</span>
+    </div>
 
-    <img src="https://raw.githubusercontent.com/h38331627-cloud/AVIRAAJ-DIVEDI-/main/image1avi.jpg" class="profile">
+    <div>
+      <h1 class="name">AVIRAAJ DIVEDI</h1>
+      <span class="badge">LIVE</span>
 
-    <p class="mt-2 text-sm">Cricket Prediction King 👑</p>
+      <img src="https://raw.githubusercontent.com/h38331627-cloud/AVIRAAJ-DIVEDI-/main/image1avi.jpg" class="profile">
 
-    <div class="countdown" id="count">30</div>
+      <p class="mt-2 text-sm">India's No.1 Cricket Predictor 👑</p>
 
-    <a href="https://t.me/+cLrxxtYfFhFhZGJl">
-      <button class="btn">JOIN TELEGRAM</button>
-    </a>
+      <div class="stats">
+        <div class="stat-box">🔥 12.5K Members</div>
+        <div class="stat-box">🎯 92% Accuracy</div>
+      </div>
+
+      <div class="countdown" id="count">30</div>
+
+      <a href="https://t.me/+cLrxxtYfFhFhZGJl">
+        <button class="btn">JOIN TELEGRAM NOW</button>
+      </a>
+    </div>
   </div>
 
-  <!-- Layer 4 -->
+  <div class="chat">
+    <div class="chat-msg">💰 Bhai kal 5k jeeta 🔥</div>
+    <div class="chat-msg">🎯 Aaj ka match bhi sahi diya</div>
+    <div class="chat-msg">👑 King ho bhai</div>
+  </div>
+
   <div class="layer ui-layer"></div>
 </div>
 
